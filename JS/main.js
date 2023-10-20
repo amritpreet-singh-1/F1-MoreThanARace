@@ -34,7 +34,7 @@ $(document).ready(function(){
             else if(username == d_username && password == d_password){
                 //alert("Success");
                 //setCookie("username: ", username, 1 ); // setting cookie
-                window.open("../pages/home.html", "_self", true);
+                window.open("./pages/home.html", "_self", true);
             }
             else{
                 alert("try again");
