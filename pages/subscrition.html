@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formula 1: More than a Race</title>
+    <style>
+        input[type=text], input[type=email], input[type=tel], select, input[type=date],
+        input[type=number]
+        {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            }
+
+        input[type=submit]{
+            width: 40%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            margin-left: 3rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+        
+        input[type=reset] {
+            width: 40%;
+            background-color: #000000;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            margin-left: 5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover, input[type=reset]:hover {
+            background-color: #45a049;
+            }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            }
+
+        body{
+            background-image: url(../img/background.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: 100% 100%;
+            }
+    </style>
+
+    <script type="text/javascript">
+        let t1, t2;
+        function getT1()
+        {
+            let date1 = new Date();
+            t1 = date1.getTime();
+        }
+
+        function diffT2fromT1()
+        {
+            let date2 = new Date();
+            t2 = date2.getTime();
+
+            let timespan = t2 - t1;
+            alert("You Spent " + (timespan/1000).toString() + ' secs on this form');
+        }
+    </script>
+    <script src="../JS/jQuery_3.6.1.js"></script>
+  </head>
+  <body onload="getT1();">
+    <main>
+    <div style="width: 800px; margin-left: auto; margin-right: auto;">
+        <h1>Buy Subscription</h1>
+        <p>Thank You so much for choosing Us. Just a few Steps before you can unlock the Permium Content!</p>
+    </div>
+    <div style="width: 800px; margin-left: auto; margin-right: auto;">
+        <form action="action_page.php" method="get">
+            <label for="fname">FirstName </label>
+            <input type="text" id="fname" placeholder="First Name" size="45" maxlength="20" required/> <br /><br/>
+            
+            <label for="lname">LastName </label>
+            <input type="text" id="lname" placeholder="Last Name" size="45" maxlength="20" required/> <br /><br/>
+            
+            <label for="mName">Middle Name <span style="color: gray;">(Optional)</span>  </label>
+            <input type="text" id="mName" placeholder="Middle Name" size="45" maxlength="20"/> <br /><br/>
+            
+            <label for="username">Username </label>
+            <input type="text" id="username" placeholder="@username" size="45" maxlength="15" required/> <br /><br/>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="name@domain.com" size="45" maxlength="45" required/><br><br> 
+
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="514-123-4567" pattern="[1-9]{3}-[0-9]{3}-[0-9]{4}" required/><br><br> 
+
+            <label for="dob"> Date of Birth</label>
+            <input type="date" id="dob" name="dob" max="2004-12-09" required/><br><br>
+
+            
+            <label for="states">State-Province:</label>
+                <select id="states">
+                    <option>Alberta</option>
+                    <option>British Columbia</option>
+                    <option>Manitoba</option>
+                    <option>New Brunswick</option>
+                    <option>Newfoundland and Labrador</option>
+                    <option>Northwest Territories</option>
+                    <option>Nova Scotia</option>
+                    <option>Nunavut</option>
+                    <option>Ontario</option>
+                    <option>Prince Edward Island</option>
+                    <option selected="selected">Quebec</option>
+                    <option>Saskatchewan</option>
+                    <option>Yukon</option>
+                </select>
+            <div class="payment">
+                <h3>Payment Method</h3>
+                <input type="radio" id="credit" name="paymentMthd" value="Credit Card" checked="checked">Credit Card<br><br>
+                
+                <input type="radio" id="mCard" name="paymentMthd" value="Master Card">Master Card<br><br>
+                
+                <input type="radio" id="amex" name="paymentMthd" value="American Express">American Express<br><br>
+            </div>
+                <label for="billingAddress1">Billing Details</label>
+                <input type="text" id="billingAddress1" placeholder="Street/Apt No." required>
+
+                <label for="billingAddress2">Billing Details</label>
+                <input type="text" id="billingAddress2" placeholder="Town / City" required>
+
+                <label for="cardName">Name on Card</label>
+                <input type="text" id="cardName" placeholder="Mr. John Doe" required>
+
+                <label for="cardNum">Card Number</label>
+                <input type="tel" id="cardNum" placeholder="1234 5678 9012 3456" required pattern="[1-9]{4} [0-9]{4} [0-9]{4}" maxlength="19">
+            
+                  
+            <input type="submit" value="Submit" onclick="diffT2fromT1();">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+    </main>
+  </body>
+</html>
